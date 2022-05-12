@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Comic from "../components/Comic";
 
 export default function Comics() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,12 +27,12 @@ export default function Comics() {
   return isLoading === true ? (
     <p>Chargement en cours</p>
   ) : (
-    <div className="comics">
+    <div className="comics-map">
       <h2>Tous vos comics</h2>
       {data.results.map((comics) => {
         return (
-          <div key={comics._id}>
-            <p>{comics.title}</p>
+          <div className="comics-cards">
+            <Comic comics={comics} />
           </div>
         );
       })}

@@ -31,3 +31,9 @@ h2 {
   height: 350px;
   width: 25%;
 }
+
+.comics-image img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
