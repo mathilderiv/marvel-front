@@ -14,11 +14,11 @@ function Input({ character }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const responseInput = await axios.get(
+      const response = await axios.get(
         `https://marvel-backend-p.herokuapp.com/characters/${inputsearch}`
       );
-      console.log("handleSubmit", responseInput.character.name);
-      setCharacters(responseInput.character.name);
+      console.log("handleSubmit", response.character.name);
+      setCharacters(response.character.name);
     } catch (error) {
       toast.error("Ce personnage n'existe pas");
     }

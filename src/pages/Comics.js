@@ -5,14 +5,15 @@ import Comic from "../components/Comic";
 
 export default function Comics() {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
 
+  console.log(data);
   //Requête vers l'API
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          " https://marvel-backend-p.herokuapp.com/comics"
+          "https://marvel-backend-p.herokuapp.com/comics"
         );
         // console.log(response.data);
         setData(response.data);
@@ -24,7 +25,8 @@ export default function Comics() {
     };
     fetchData();
   }, []);
-  console.log(data);
+
+  // return <p>Coucou</p>;
   return isLoading === true ? (
     <p>Chargement en cours</p>
   ) : (

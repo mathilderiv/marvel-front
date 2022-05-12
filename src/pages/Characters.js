@@ -2,12 +2,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { useParams } from "react-router-dom";
+
 import "../App.css";
 
 import Cards from "../components/Cards";
 import Input from "../components/Input";
 
 export default function Characters() {
+  // const { id } = useParams();
+
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
 
@@ -32,13 +36,13 @@ export default function Characters() {
   return isLoading === true ? (
     <p>Chargement en cours</p>
   ) : (
-    <div className="map">
+    <div className="container">
       <Input />
 
-      <h2>Tous vos personnages</h2>
+      <h2 className="my-4">Tous vos personnages</h2>
       {data.results.map((character) => {
         return (
-          <div className="cards">
+          <div className="row">
             <Link
               to="/comics"
               style={{ textDecoration: "none", color: "black" }}
