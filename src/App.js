@@ -5,7 +5,6 @@ import "./App.css";
 import Header from "./components/Header";
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
-import Cards from "./components/Cards";
 
 function App() {
   return (

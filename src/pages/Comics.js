@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+
 import Comic from "../components/Comic";
 
 export default function Comics() {
@@ -13,7 +14,7 @@ export default function Comics() {
         const response = await axios.get(
           " https://marvel-backend-p.herokuapp.com/comics"
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

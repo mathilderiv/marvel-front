@@ -2,9 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 import "../App.css";
 
 import Cards from "../components/Cards";
@@ -37,21 +34,6 @@ export default function Characters() {
   ) : (
     <div className="map">
       <Input />
-      {/* <div className="onclick">
-        {characters ? (
-          <>
-          <Cards character={character} />
-          <button onClick={() => {
-            setCharacters(null);
-          }}
-          className="reset-button">
-            Reset
-          </button>
-          </>
-        ) : {data.results.map((character) => {
-          <Cards key={index} characters+{characters} />
-         }
-      </div> */}
 
       <h2>Tous vos personnages</h2>
       {data.results.map((character) => {
@@ -66,8 +48,6 @@ export default function Characters() {
           </div>
         );
       })}
-
-      <ToastContainer />
     </div>
   );
 }
