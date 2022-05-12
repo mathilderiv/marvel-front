@@ -26,7 +26,7 @@ function Input({ character }) {
   return (
     <div className="research" onSubmit={handleSubmit}>
       <label htmlFor="search" className="input-label">
-        Chercher votre personnage
+        Votre personnage
       </label>
       <input
         type="text"

@@ -1,10 +1,8 @@
 .header {
   width: 100vw;
   height: 150px;
-
   background-color: #ed171e;
-  display: flex;
-  align-items: center;
+  border: white 10px solid;
 }
 
 .header img {
@@ -12,7 +10,57 @@
   height: 80px;
 }
 
-/*  ROUTE CHARACTERS  */
+.character img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo p:hover {
+  color: black;
+}
+
+.logo {
+  display: flex;
+  width: 75vw;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.logo p {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.comics img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.favorite img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+/* 
+HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header p {
+  font-size: 30px;
+}
+/*  PAGE CHARACTERS  */
 
 .map img {
   width: 150px;
@@ -31,4 +79,110 @@ h2 {
   display: flex;
 
   flex-wrap: nowrap;
+}
+
+.container {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+/* PAGE COMICS */
+
+.comics-description {
+  border: solid 2px white;
+  background-color: black;
+  color: white;
+  width: 300px;
+  height: 560px;
+  position: relative;
+}
+.comics-map {
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  flex-shrink: 0;
+  overflow-x: scroll;
+  -ms-overflox-style: none;
+  scrollbar-width: none;
+}
+
+.comics-map::-webkit-scrollbar {
+  display: none;
+}
+
+.comics-map h2 {
+  font-size: 30px;
+}
+
+.comics-map h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+.comics-map p {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.comics-image img {
+  height: 250px;
+  width: 298px;
+  object-fit: contain;
+
+  transition: transform 0.1s;
+}
+
+img:hover {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.comics-cards {
+  width: 300px;
+}
+
+.shield-comics {
+  position: absolute;
+  top: 500px;
+  right: 10px;
+}
+
+/* INPUT COMPONENT */
+
+.research {
+  height: 60px;
+  width: 100vw;
+
+  margin-bottom: 20px;
+}
+
+.research input {
+  height: 90%;
+  width: 70%;
+  text-align: center;
+  background-color: black;
+  border: none;
+  color: white;
+  outline: dashed #ed171e;
+  font-size: 20px;
+}
+
+.input-label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.research button {
+  height: 100%;
+  margin-left: 5px;
+  width: 90px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 20px;
 }

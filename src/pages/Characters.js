@@ -14,6 +14,7 @@ export default function Characters() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
+  const [page, setPage] = useState(1);
 
   //Requête vers l'API
   useEffect(() => {
@@ -31,13 +32,22 @@ export default function Characters() {
       }
     };
     fetchData();
-  }, []);
+  }, [page]);
 
   return isLoading === true ? (
     <p>Chargement en cours</p>
   ) : (
     <div className="container">
       <Input />
+
+      <div className="search">
+        <button className="page-minus" onClick={() => setPage(page - 1)}>
+          Page précédente
+        </button>
+        <button className="page-add" onClick={() => setPage(page + 1)}>
+          Page suivante
+        </button>
+      </div>
 
       <h2 className="my-4">Tous vos personnages</h2>
       {data.results.map((character) => {
