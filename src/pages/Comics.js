@@ -2,16 +2,15 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import Comic from "../components/Comic";
-import ComicsInput from "../components/ComicsInput";
+import Input from "../components/Input";
 
 export default function Comics() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
-  const [inputdata, setInputData] = useState();
   const [page, setPage] = useState(1);
   const [skip, setSkip] = useState(0);
 
-  console.log(data);
+  console.log("data", data);
   //Requête vers l'API
   useEffect(() => {
     const fetchData = async () => {
@@ -33,10 +32,10 @@ export default function Comics() {
   const handleSearch = async (inputsearch) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/comics/${inputsearch}`
+        `http://localhost:4000/comic/${inputsearch}`
       );
-      console.log(response.data.results);
-      setInputData(response.data.results);
+      console.log("handleSearch", response.data.results);
+      setData(response.data);
     } catch (error) {
       console.log(error);
       // toast.error("Ce comics n'existent pas");
@@ -47,7 +46,7 @@ export default function Comics() {
     <p>Chargement en cours</p>
   ) : (
     <>
-      <ComicsInput handleSearch={handleSearch} />
+      <Input handleSearch={handleSearch} />
       <div className="search">
         {page !== 1 && (
           <button
@@ -77,7 +76,7 @@ export default function Comics() {
         <div className="row">
           {data.results.map((comics) => {
             return (
-              <div className="col-12 col-md-4">
+              <div key={comics._id} className="col-12 col-md-4">
                 <Comic comics={comics} />
               </div>
             );

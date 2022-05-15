@@ -104,6 +104,17 @@ HEADER */
   border: white 1px solid;
 }
 
+/* PAGE CHARACTER-DETAILS */
+.character-title {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.row span {
+  color: #ed171e;
+}
+
 /*  PAGE CHARACTERS  */
 
 .card-img-top {
