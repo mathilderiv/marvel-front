@@ -19,17 +19,14 @@ const Signin = () => {
     if (email && username && password && confirmPassword) {
       if (password === confirmPassword) {
         try {
-          const response = await axios.post(
-            "http://marvel-backend-p.herokuapp.com/signin",
-            {
-              email,
-              username,
-              password,
-            }
-          );
+          const response = await axios.post("http://localhost:4000/signin", {
+            email,
+            username,
+            password,
+          });
           console.log(response.data);
         } catch (error) {
-          console.log(error.message.data);
+          console.log(error);
         }
       } else {
         <p>Les deux mots de passe de correspondent pas !</p>;

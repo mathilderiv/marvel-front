@@ -1,7 +1,4 @@
 import React from "react";
-import axios from "axios";
-
-import Cards from "./Cards";
 
 import { useState, useEffect } from "react";
 

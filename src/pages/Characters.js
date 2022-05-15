@@ -80,14 +80,13 @@ export default function Characters() {
         )}
       </div>
 
-      <h2 className="my-4">Tous vos personnages</h2>
-      <div className="container">
+      <div className="container bg-white">
         <div className="row">
           {data.map((character) => {
             return (
               <Link
                 className="col-12 col-md-4"
-                to="/comics"
+                to={`/character/${character._id}`}
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <Cards character={character} />

@@ -3,17 +3,16 @@ import shield from "../img/shield.png";
 
 const Comic = ({ comics }) => {
   return (
-    <div className="comics-description">
-      <div className="display" key={comics._id}>
+    <div className="card text-white bg-black  mt-4 mx-auto">
+      <div className="card-body" key={comics._id}>
         <h3>{comics.title}</h3>
-        <div className="comics-image">
-          <img
-            src={comics.thumbnail.path + "." + comics.thumbnail.extension}
-            alt={comics.title}
-          />
-        </div>
+        <img
+          src={comics.thumbnail.path + "." + comics.thumbnail.extension}
+          className="card-img-top"
+          alt={comics.title}
+        />
 
-        <div className="description">
+        <div className="card-text">
           {comics.description ? (
             <p>{comics.description}</p>
           ) : (
@@ -21,7 +20,7 @@ const Comic = ({ comics }) => {
           )}
 
           <img
-            className="shield-comics"
+            className="shields-comics"
             style={{ width: 40, height: 40 }}
             src={shield}
             alt="favorite-logo"
