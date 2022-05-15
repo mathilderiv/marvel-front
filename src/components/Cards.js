@@ -2,7 +2,7 @@ import React from "react";
 
 function Cards({ character }) {
   return (
-    <div className="card text-white bg-dark col-4 col-md-4 mt-4 mx-auto">
+    <div className="card text-white bg-dark  mt-4 mx-auto">
       <img
         src={character.thumbnail.path + "." + character.thumbnail.extension}
         className="card-img-top"
