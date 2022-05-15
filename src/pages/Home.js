@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import font from "../img/avengers-infinity-war.jpeg";
 import "../App.css";
 
 export default function Home() {
   return (
     <div className="login">
-      <h2>
-        Pour vivre l'expérience Marvel merci de vous authentifier ou de créer un
-        compte
-      </h2>
+      <h2>Pour débuter l'expérience Marvel</h2>
 
       <Link to="/signin">
         <button className="S'inscrire" type="button">
